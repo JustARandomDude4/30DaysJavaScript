@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Sequence detection</title>
+    <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+</head>
+
+<body>
+    <script>
+        const code = 'satwi';
+        const codelength = code.length;
+
+        const array = [];
+        window.addEventListener('keyup', (e) => {
+            console.log(e.key);
+            array.push(e.key);
+            const arrayleftlength = array.length - codelength;
+            array.slice(-(codelength + 1), arrayleftlength);
+
+            if (array.join('').includes(code)) {
+                console.log('code entered!!');
+                cornify_add();
+            }
+
+            console.log(array);
+        });
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
